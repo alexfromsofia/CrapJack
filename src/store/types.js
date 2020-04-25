@@ -1,0 +1,5 @@
+export default {
+  GET_NEW_DECK: 'GET_NEW_DECK',
+  NEW_GAME: 'NEW_GAME',
+  TOGGLE_RULES: 'TOGGLE_RULES'
+};
