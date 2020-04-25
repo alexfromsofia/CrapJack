@@ -20,3 +20,7 @@ export const REQUEST_METHODS = {
   PUT: 'PUT',
   DELETE: 'DELETE'
 };
+
+export const SYSTEM_MESSAGES = {
+  WELCOME: 'Welcome to Crap Jack!'
+};

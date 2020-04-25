@@ -1,3 +1,12 @@
+:root {
+  --main-text-color: white;
+  --main-offset: 32px;
+  --main-element-padding: 8px;
+  --main-font-size: 16px;
+  --button-font-size: 20px;
+  --system-message-font-size: 24px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +19,52 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: url('/img/table.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.game--buttons {
+  margin-top: auto;
+  margin-bottom: var(--main-offset);
+}
+
+.game--buttons > button {
+  margin: 0 var(--main-offset);
+  background: white;
+  padding: var(--main-element-padding);
+  font-size: var(--button-font-size);
+}
+
+.system-message {
+  color: var(--main-text-color);
+  font-size: var(--system-message-font-size);
+  margin: var(--main-offset) 0;
+}
+
+.system-message h1 {
+  margin: 0;
+  padding: 0;
 }

@@ -1,7 +1,10 @@
 import types from './types';
+import { SYSTEM_MESSAGES } from '../utils/constants';
 
 export const initialGameState = {
   gameId: 0,
+  isPlaying: false,
+  systemMessage: SYSTEM_MESSAGES.WELCOME,
   dealer: {
     name: 'Dealer',
     score: 0
@@ -17,7 +20,8 @@ export default (state, action) => {
     case types.NEW_GAME: {
       return {
         ...state,
-        gameId: state.gameId + 1
+        gameId: state.gameId + 1,
+        isPlaying: true
       };
     }
     case types.GET_NEW_DECK: {
