@@ -1,10 +1,11 @@
 import types from './types';
 import { SYSTEM_MESSAGES } from '../utils/constants';
-import { calculateScore } from '../utils/score';
+import { calculateScore } from '../utils/utils';
 
 export const initialGameState = {
   gameId: 0,
   isPlaying: false,
+  isRevealed: false,
   systemMessage: SYSTEM_MESSAGES.WELCOME,
   deckId: null,
   dealer: {
@@ -27,7 +28,15 @@ export default (state, action) => {
       return {
         ...state,
         gameId: state.gameId + 1,
-        isPlaying: true
+        systemMessage: 'Dealing cards...',
+        isPlaying: true,
+        isRevealed: false
+      };
+    }
+    case types.REVEAL_CARDS: {
+      return {
+        ...state,
+        isRevealed: true
       };
     }
     case types.DRAW_CARDS: {

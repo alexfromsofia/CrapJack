@@ -5,15 +5,24 @@ import types from '../store/types';
 import useGetNewDeck from '../hooks/useGetNewDeck';
 
 function GameButtons() {
-  const [, dispatch] = useStoreValue();
+  const [{ game }, dispatch] = useStoreValue();
+  const { isRevealed, isPlaying } = game;
 
   // Attach Hook which is dependent to trigger on handleStartGame
   useGetNewDeck();
-  const handleStartGame = () => dispatch({ type: types.NEW_GAME });
+  const handleStartGame = () => {
+    if (!isPlaying || isRevealed) {
+      dispatch({ type: types.NEW_GAME });
+    } else {
+      dispatch({ type: types.REVEAL_CARDS });
+    }
+  };
 
   return (
-    <div className="game--buttons">
-      <button onClick={handleStartGame}>New game</button>
+    <div className="game__buttons">
+      <button onClick={handleStartGame}>
+        {isRevealed || !isPlaying ? 'New game' : 'Reveal Cards'}
+      </button>
       <button onClick={handleToggleRules(dispatch, true)}>View Rules</button>
     </div>
   );
