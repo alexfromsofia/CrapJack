@@ -57,8 +57,17 @@ export const drawCards = async (deckId = null, numOfCards = 1) => {
     return console.log('Please provide deckId');
   }
 
-  const cards = await generateRequest({
-    endpoint: `${deckId}/?count=${numOfCards}`
-  });
-  console.log(cards);
+  try {
+    const cards = await generateRequest({
+      endpoint: `${deckId}/draw/?count=${numOfCards}`
+    });
+
+    if (!cards.success) {
+      return { error: 'Error getting cards.' };
+    }
+
+    return cards;
+  } catch (error) {
+    console.log(error);
+  }
 };

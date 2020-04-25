@@ -5,6 +5,9 @@
   --main-font-size: 16px;
   --button-font-size: 20px;
   --system-message-font-size: 24px;
+  --box-shadow: 0 10px 6px -6px;
+  --box-shadow-pressed: 0 5px 6px -6px;
+  --transition: all 0.3s linear;
 }
 
 body {
@@ -56,6 +59,16 @@ code {
   background: white;
   padding: var(--main-element-padding);
   font-size: var(--button-font-size);
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.game--buttons > button:focus {
+  box-shadow: var(--box-shadow-pressed);
+}
+
+.game--buttons > button:hover {
+  box-shadow: var(--box-shadow-pressed);
 }
 
 .system-message {
@@ -67,4 +80,52 @@ code {
 .system-message h1 {
   margin: 0;
   padding: 0;
+}
+
+.rules {
+  position: relative;
+}
+
+.rules h2:first-of-type {
+  margin-top: 0;
+}
+
+/* Modal */
+
+.modal {
+  position: absolute;
+  top: 50%;
+  background: #fff;
+  left: 50%;
+  padding: 32px;
+  transform: translate(-50%, -50%);
+  width: 70vw;
+  max-height: 70vh;
+  box-shadow: var(--box-shadow);
+}
+
+.modal--close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  fill: black;
+  cursor: pointer;
+}
+
+/* Modal End */
+
+.hidden {
+  z-index: -1;
+  visibility: hidden;
+  opacity: -1;
+  transition: var(--transition);
+}
+
+.visible {
+  transition: var(--transition);
+  opacity: 1;
+  z-index: 1000;
+  visibility: visible;
 }
