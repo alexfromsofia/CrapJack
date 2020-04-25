@@ -8,7 +8,7 @@ function Player({ playerType }) {
   const [game] = useStoreValue();
   const { deckId, isRevealed } = game;
   const player = game[playerType];
-  const { cards } = player;
+  const { cards, isWinner } = player;
 
   if (!cards) return null;
 
@@ -17,7 +17,8 @@ function Player({ playerType }) {
       <div
         className={classNames('game__player--score', {
           hidden: !isRevealed,
-          visible: isRevealed
+          visible: isRevealed,
+          winner: isWinner
         })}
       >
         {player.name} score: {player.score}

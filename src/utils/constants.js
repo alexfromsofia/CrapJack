@@ -31,3 +31,4 @@ export const PLAYER_TYPES = {
 };
 
 export const CLEANUP_TIME = 1000;
+export const BUST_TRESHOLD = 21;

@@ -181,6 +181,12 @@ body {
   transition: var(--transition);
 }
 
+.game__player--score.winner {
+  animation-name: winnerText;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
 .game__card img {
   width: var(--card-width);
   height: var(--card-height);
@@ -229,11 +235,22 @@ body {
   backface-visibility: hidden;
 }
 
-.game__card--face.front {
-}
-
 .game__card--face.back {
   transform: rotateY(180deg);
 }
 
 /* Card flip animation end */
+
+/* Winner text animation */
+@keyframes winnerText {
+  0% {
+    color: inherit;
+    font-weight: normal;
+  }
+
+  100% {
+    color: lime;
+    font-weight: bold;
+  }
+}
+/* Winner text animation */

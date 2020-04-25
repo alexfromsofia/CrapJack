@@ -1,5 +1,10 @@
-import { CARD_POINTS } from './constants';
+import { CARD_POINTS, BUST_TRESHOLD, PLAYER_TYPES } from './constants';
 
+/**
+ * Calculations are made based on the rules.
+ * 2 = 2pts, 3 = 3pts,...10 = 10pts, J, Q, K, A = 10pts each
+ * @param {Array} cards
+ */
 export const calculateScore = (cards) =>
   cards.reduce((acc, card) => {
     const points = CARD_POINTS[card.value];
@@ -8,6 +13,28 @@ export const calculateScore = (cards) =>
 
     return acc;
   }, 0);
+
+export const determineWinner = ({ dealer, player }) => {
+  const { score: dealerScore } = dealer;
+  const { score: playerScore } = player;
+
+  // No winner if both scores are above 21 or equal to each other.
+  const areBothScoresBust =
+    (dealerScore > BUST_TRESHOLD && playerScore > BUST_TRESHOLD) ||
+    dealerScore === playerScore;
+
+  if (areBothScoresBust) return null;
+
+  if (dealerScore > BUST_TRESHOLD) {
+    return PLAYER_TYPES.PLAYER;
+  }
+
+  if (playerScore > BUST_TRESHOLD) {
+    return PLAYER_TYPES.DEALER;
+  }
+
+  return playerScore > dealerScore ? PLAYER_TYPES.PLAYER : PLAYER_TYPES.DEALER;
+};
 
 /**
  * Returns a random number between the specified values.
