@@ -24,3 +24,8 @@ export const REQUEST_METHODS = {
 export const SYSTEM_MESSAGES = {
   WELCOME: 'Welcome to Crap Jack!'
 };
+
+export const PLAYER_TYPES = {
+  DEALER: 'dealer',
+  PLAYER: 'player'
+};

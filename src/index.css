@@ -159,26 +159,60 @@ body {
   transition: var(--transition);
 }
 
-.game__card {
-  max-height: 200px;
-  transition: var(--transition);
-}
-
 .game__card img {
   width: 100%;
   max-width: 120px;
   height: auto;
 }
 
-.game__card.player {
+/* Players end */
+
+/* Card deal animation */
+.scene.player {
   transform: translateY(50vh);
 }
-.game__card.dealer {
+.scene.dealer {
   transform: translateY(-50vh);
 }
 
-.game__card.dealer.loaded,
-.game__card.loaded {
+.scene.dealer.loaded,
+.scene.loaded {
   transform: translateY(0);
 }
-/* Players end */
+/* Card deal animation */
+
+/* Card flip animation */
+
+.scene {
+  width: 120px;
+  height: 166px;
+  perspective: 600px;
+  max-height: 200px;
+  transition: var(--transition);
+}
+
+.game__card {
+  position: relative;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.game__card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.game__card--face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+}
+
+.game__card--face.front {
+}
+
+.game__card--face.back {
+  transform: rotateY(180deg);
+}
+
+/* Card flip animation end */
