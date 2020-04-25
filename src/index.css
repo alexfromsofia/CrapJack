@@ -14,6 +14,8 @@
   --z-index-overlay: 999;
   --z-index-hidden: -1;
   --z-index-modal: 1000;
+  --card-width: 120px;
+  --card-height: 166px;
 }
 
 body {
@@ -180,9 +182,8 @@ body {
 }
 
 .game__card img {
-  width: 100%;
-  max-width: 120px;
-  height: auto;
+  width: var(--card-width);
+  height: var(--card-height);
 }
 
 /* Players end */
@@ -201,11 +202,11 @@ body {
 }
 /* Card deal animation */
 
-/* Card flip animation */
+/* Card flip animation ref: https://3dtransforms.desandro.com/card-flip */
 
 .scene {
-  width: 120px;
-  height: 166px;
+  width: var(--card-width);
+  height: var(--card-height);
   perspective: 600px;
   max-height: 200px;
   transition: var(--transition);
