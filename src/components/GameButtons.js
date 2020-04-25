@@ -1,4 +1,5 @@
 import React from 'react';
+import classNames from 'classnames';
 import { useStoreValue } from '../store/StoreProvider';
 import { handleToggleRules } from './Rules';
 import types from '../store/types';
@@ -36,7 +37,10 @@ function GameButtons() {
 
   return (
     <div className="game__buttons">
-      <button onClick={handleStartGame}>
+      <button
+        onClick={handleStartGame}
+        className={classNames({ reveal: !isRevealed && isPlaying })}
+      >
         {isRevealed || !isPlaying ? 'New game' : 'Reveal Cards'}
       </button>
       <button onClick={handleToggleRules(dispatch, true)}>View Rules</button>

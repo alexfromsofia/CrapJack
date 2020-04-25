@@ -16,6 +16,9 @@
   --z-index-modal: 1000;
   --card-width: 120px;
   --card-height: 166px;
+  --purple-color: #32338f;
+  --border-radius: 6px;
+  --actions-height: 50px;
 }
 
 body {
@@ -70,32 +73,60 @@ body {
 
 /* Game Buttons */
 
-.game__buttons {
+.game__actions {
   flex-basis: 10%;
   margin-bottom: var(--main-offset);
-  min-width: 400px;
+  min-width: 600px;
   display: flex;
   justify-content: space-between;
   z-index: var(--z-index-top-elements);
 }
 
+.game__score {
+  height: var(--actions-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background: var(--purple-color);
+  padding: var(--button-padding);
+  border-radius: var(--border-radius);
+  min-width: 100px;
+}
+
+.game__buttons {
+  min-width: 400px;
+  height: var(--actions-height);
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .game__buttons > button {
   width: 45%;
-  height: 50px;
+  height: 100%;
   background: white;
   padding: var(--button-padding);
   font-size: var(--button-font-size);
   box-shadow: var(--box-shadow);
   transition: var(--transition);
-  border: 1px solid lightgray;
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  cursor: pointer;
 }
 
 .game__buttons > button:focus {
-  box-shadow: var(--box-shadow-pressed);
+  /* box-shadow: var(--box-shadow-pressed); */
 }
 
 .game__buttons > button:hover {
   box-shadow: var(--box-shadow-pressed);
+  border-color: transparent;
+}
+
+.game__buttons > button.reveal {
+  background: var(--purple-color);
+  color: white;
 }
 
 /* Game Buttons end */
