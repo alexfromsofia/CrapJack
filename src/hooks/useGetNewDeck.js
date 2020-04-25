@@ -2,15 +2,14 @@ import { useEffect } from 'react';
 import { getNewShuffledDeck, drawCards } from '../utils/ajaxUtil';
 import { useStoreValue } from '../store/StoreProvider';
 import types from '../store/types';
-import { initialGameState } from '../store/gameReducer';
+import { initialState } from '../store/gameReducer';
 
 export default function useGetNewDeck() {
-  const [{ game }, dispatch] = useStoreValue();
-  const { gameId } = game;
+  const [{ gameId }, dispatch] = useStoreValue();
 
   useEffect(() => {
     // This means we haven't pressed New Game yet
-    if (gameId === initialGameState.gameId) return;
+    if (gameId === initialState.gameId) return;
     const getDeck = async () => {
       const deck = await getNewShuffledDeck();
 

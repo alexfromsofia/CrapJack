@@ -29,3 +29,5 @@ export const PLAYER_TYPES = {
   DEALER: 'dealer',
   PLAYER: 'player'
 };
+
+export const CLEANUP_TIME = 1000;

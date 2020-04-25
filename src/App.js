@@ -1,7 +1,9 @@
 import React from 'react';
-import { StoreProvider } from './store/StoreProvider';
-import { initialState, rootReducer, init } from './store';
 import { StateInspector } from 'reinspect';
+
+import { StoreProvider } from './store/StoreProvider';
+import { rootReducer, init } from './store';
+import { initialState } from './store/gameReducer';
 import Game from './components/Game';
 
 function App() {

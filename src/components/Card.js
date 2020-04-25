@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames';
 import { getRandomArbitrary } from '../utils/utils';
 import { useStoreValue } from '../store/StoreProvider';
@@ -14,14 +14,20 @@ import { PLAYER_TYPES } from '../utils/constants';
 
 function Card({ card, playerType }) {
   const [loaded, setLoaded] = useState(false);
-  const [{ game }] = useStoreValue();
-  const { isRevealed } = game;
+  const [{ isRevealed, isCleaned }] = useStoreValue();
   const handleCardLoad = () => {
     setTimeout(() => {
       setLoaded(true);
       // Delay card animation to simulate separate card dealing.
     }, getRandomArbitrary(200, 500));
   };
+  useEffect(() => {
+    if (isCleaned) {
+      setLoaded(false);
+    }
+
+    return;
+  }, [isCleaned]);
   const isFlipped = playerType === PLAYER_TYPES.PLAYER || isRevealed;
 
   return (

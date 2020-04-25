@@ -15,8 +15,7 @@ export const handleToggleRules = (dispatch, toggle) => () => {
 
 function Rules() {
   const ref = useRef();
-  const [{ settings }, dispatch] = useStoreValue();
-  const { shouldDisplayRules } = settings;
+  const [{ shouldDisplayRules }, dispatch] = useStoreValue();
 
   useClickOutside({
     ref,

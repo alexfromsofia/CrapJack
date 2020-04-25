@@ -5,8 +5,8 @@ import { useStoreValue } from '../store/StoreProvider';
 import Card from './Card';
 
 function Player({ playerType }) {
-  const [{ game }] = useStoreValue();
-  const { isRevealed } = game;
+  const [game] = useStoreValue();
+  const { deckId, isRevealed } = game;
   const player = game[playerType];
   const { cards } = player;
 
@@ -25,7 +25,7 @@ function Player({ playerType }) {
       <div className="game__player--cards">
         {cards.map((card, index) => (
           <Card
-            key={card.code}
+            key={`${card.code}-${deckId}`}
             card={card}
             index={index}
             playerType={playerType}
