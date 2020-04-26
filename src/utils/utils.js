@@ -5,14 +5,17 @@ import { CARD_POINTS, BUST_TRESHOLD, PLAYER_TYPES } from './constants';
  * 2 = 2pts, 3 = 3pts,...10 = 10pts, J, Q, K, A = 10pts each
  * @param {Array} cards
  */
-export const calculateScore = (cards) =>
-  cards.reduce((acc, card) => {
-    const points = CARD_POINTS[card.value];
+export const calculateScore = (cards) => {
+  if (!Array.isArray(cards)) return 0;
+
+  return cards.reduce((acc, card) => {
+    const points = CARD_POINTS[card.value] || 0;
 
     acc += points;
 
     return acc;
   }, 0);
+};
 
 export const determineWinner = ({ dealer, player }) => {
   const { score: dealerScore } = dealer;
