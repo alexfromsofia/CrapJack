@@ -8,6 +8,7 @@ import Game from './components/Game';
 
 function App() {
   return (
+    // Connect React state hooks (useState and useReducer) to redux dev tools.
     <StateInspector name="Crap Jack Game">
       <StoreProvider
         initialState={initialState}

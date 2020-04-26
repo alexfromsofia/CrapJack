@@ -4,6 +4,7 @@ import { CARD_POINTS, BUST_TRESHOLD, PLAYER_TYPES } from './constants';
  * Calculations are made based on the rules.
  * 2 = 2pts, 3 = 3pts,...10 = 10pts, J, Q, K, A = 10pts each
  * @param {Array} cards
+ * @returns {Number}
  */
 export const calculateScore = (cards) => {
   if (!Array.isArray(cards)) return 0;
@@ -17,6 +18,13 @@ export const calculateScore = (cards) => {
   }, 0);
 };
 
+/**
+ * Returns a string based on the game conditions for winning.
+ * Returns null if there is no winner.
+ * @param {Object} dealer
+ * @param {Object} player
+ * @returns {String or null}
+ */
 export const determineWinner = ({ dealer, player }) => {
   const { score: dealerScore } = dealer;
   const { score: playerScore } = player;
@@ -44,6 +52,7 @@ export const determineWinner = ({ dealer, player }) => {
  * The returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max.
  * @param {Number} min
  * @param {Number} max
+ * @returns {Number}
  */
 export const getRandomArbitrary = (min, max) =>
   Math.random() * (max - min) + min;

@@ -1,8 +1,38 @@
 # CrapJack
 
-# Web Developer Test Project
+### Start:
 
-## Overview
+```console
+$ npm i
+$ npm start
+```
+
+### Run tests:
+
+```console
+$ npm run test
+```
+
+### I have chosen modern react with hooks for developing the game due to the position I am applying for.
+
+### I've used the following technologies on the project:
+
+1. react-create-app for foundation(using hooks and context for state management).
+2. prettier for code formatting
+3. eslint for error linting.
+4. jest and enzyme for testing
+5. [http://deckofcardsapi.com/](http://deckofcardsapi.com/) for cards API
+
+### Time breakdown
+
+1. Project planning - 2 hours
+2. Researching - 2 hours
+3. Project setup and run - 2 hours
+4. Coding - 5 hours
+5. Testing - 4 hours
+6. Documenting - 1 hour
+
+## Task Overview
 
 Your task, should you choose to accept it, is to create a project to be used for a simple web based card game – CrapJack
 The game is a simplified version of BlackJack with a single dealing round and score.
@@ -69,5 +99,3 @@ An advanced candidate may choose to showcase their strength in a particular area
 1. Please provide complete source code with comments for the task as a self-contained zip with all necessary files/dependencies.
 2. Please provide brief and clear documentation of the projects and services.
 3. Please provide a breakdown of the time it took you to research, design, write and document the implementation.
-
-## Project setup

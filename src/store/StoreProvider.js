@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from 'react';
-// TODO: Comment
+
+// Connect React state hooks (useState and useReducer) to redux dev tools.
 import { useReducer } from 'reinspect';
 
 import PropTypes from 'prop-types';
