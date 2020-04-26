@@ -37,11 +37,18 @@ function GameButtons() {
     <div className="game__buttons">
       <button
         onClick={handleStartGame}
-        className={classNames({ reveal: !isRevealed && isPlaying })}
+        className={classNames('button__main', {
+          reveal: !isRevealed && isPlaying
+        })}
       >
         {isRevealed || !isPlaying ? 'New game' : 'Reveal Cards'}
       </button>
-      <button onClick={handleToggleRules(dispatch, true)}>View Rules</button>
+      <button
+        className="button__rules"
+        onClick={handleToggleRules(dispatch, true)}
+      >
+        View Rules
+      </button>
     </div>
   );
 }

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches Snapshot 1`] = `
+<StateInspector
+  name="Crap Jack Game"
+>
+  <StoreProvider
+    init={[Function]}
+    initialState={
+      Object {
+        "dealer": Object {
+          "cards": Array [],
+          "isWinner": false,
+          "name": "Dealer",
+          "score": 0,
+          "wins": 0,
+        },
+        "deckId": null,
+        "gameId": 0,
+        "isCleaned": true,
+        "isPlaying": false,
+        "isRevealed": false,
+        "player": Object {
+          "cards": Array [],
+          "isWinner": false,
+          "name": "You",
+          "score": 0,
+          "wins": 0,
+        },
+        "shouldDisplayRules": false,
+        "systemMessage": "Welcome to Crap Jack!",
+      }
+    }
+    reducer={[Function]}
+  >
+    <div
+      className="wrapper"
+    >
+      <Game />
+    </div>
+  </StoreProvider>
+</StateInspector>
+`;
