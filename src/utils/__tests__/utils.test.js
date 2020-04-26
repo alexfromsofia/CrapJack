@@ -1,5 +1,5 @@
-import { calculateScore, determineWinner, getRandomArbitrary } from './utils';
-import { CARD_POINTS, PLAYER_TYPES } from './constants';
+import { calculateScore, determineWinner, getRandomArbitrary } from '../utils';
+import { CARD_POINTS, PLAYER_TYPES } from '../constants';
 
 const allCardValues = Object.keys(CARD_POINTS).map((cardValue) => ({
   value: cardValue

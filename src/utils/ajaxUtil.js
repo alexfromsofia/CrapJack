@@ -3,20 +3,17 @@ import { REQUEST_METHODS } from '../utils/constants';
 /**
  * @param {String} method either GET,PUT,POST,DELETE
  * @param {String} endpoint the url from which to fetch from
- * @param {Object} body request body (for PUT and POST)
  */
 export const generateRequest = async ({
   method = REQUEST_METHODS.GET,
-  endpoint = '',
-  body = undefined
+  endpoint = ''
 }) => {
   try {
     const response = await fetch(
       // Hardcoding for the purpose of the task. Usually will be a environment variable or an argument.
       `https://deckofcardsapi.com/api/deck/${endpoint}`,
       {
-        method,
-        body: JSON.stringify(body) //TODO: maybe delete this part?
+        method
       }
     );
 
