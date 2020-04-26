@@ -11,15 +11,13 @@ function GameButtons() {
 
   // Attach Hook which is dependent to trigger on handleStartGame
   useGetNewDeck();
-  const cleanupDeck = async () => {
-    dispatch({ type: types.CLEANUP_DECK });
-
-    return new Promise((resolve) => {
+  const cleanupDeck = async () =>
+    new Promise((resolve) => {
+      dispatch({ type: types.CLEANUP_DECK });
       setTimeout(() => {
         resolve();
-      });
-    }, CLEANUP_TIME);
-  };
+      }, CLEANUP_TIME);
+    });
 
   const handleStartGame = async () => {
     if (!isPlaying) {
