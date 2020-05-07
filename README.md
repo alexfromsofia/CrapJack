@@ -1,5 +1,6 @@
 # CrapJack
 
+
 ### Start:
 
 ```console
@@ -12,8 +13,6 @@ $ npm start
 ```console
 $ npm run test
 ```
-
-### I have chosen modern react with hooks for developing the game due to the position I am applying for.
 
 ### I've used the following technologies on the project:
 
