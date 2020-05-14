@@ -1,0 +1,10 @@
+export const systemMessage = '.system-message';
+export const mainButton = '.button__main';
+export const rulesButton = '.button__rules';
+export const gameScore = '.game__score';
+export const player = '.player';
+export const dealer = '.dealer';
+export const playerScore = '.game__player--score';
+export const modal = '.modal';
+export const overlay = '.overlay';
+export const rules = '.rules';
