@@ -18,8 +18,9 @@ $ npm run test
 1. react-create-app for foundation(using hooks and context for state management).
 2. prettier for code formatting
 3. eslint for error linting.
-4. jest and enzyme for testing
-5. [http://deckofcardsapi.com/](http://deckofcardsapi.com/) for cards API
+4. jest and enzyme for unit testing
+5. cypress for e2e testing
+6. [http://deckofcardsapi.com/](http://deckofcardsapi.com/) for cards API
 
 ### Time breakdown
 
