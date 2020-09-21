@@ -35,6 +35,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "./node_modules/.bin/cypress run",
     "eject": "react-scripts eject",
     "format": "prettier --ignore-path ./.gitignore --write \"./**/*.{html,json,js,ts,css}\"",
     "format:check": "prettier ./.gitignore --check \"./**/*.{html,json,js,ts,css}\"",
