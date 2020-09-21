@@ -13,6 +13,20 @@ $ npm start
 $ npm run test
 ```
 
+### Run cypress tests:
+
+Start a dev server
+
+```console
+$ npm run start
+```
+
+In a new terminal run
+
+```console
+$ npm test:e2e
+```
+
 ### I've used the following technologies on the project:
 
 1. react-create-app for foundation(using hooks and context for state management).
